@@ -3,174 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelrhman Elyamny Moawad - Personal Website</title>
+    <title>Abdelrhman Elyamny Moawad - Personal Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="Abdelrhman_Elyamny.css">
-    </head>
+</head>
 <body>
-    <nav>
+    <nav class="navbar">
         <div class="nav-content">
-            <h1 class="logo">Abdelrhman Elyamny Moawad</h1>
+            <h1 class="logo"><a href="#home">Abdelrhman Elyamny Moawad</a></h1>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#cv">CV</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="home">
-        <div>
-            <div class="circle">
-                <img src="myphoto.jpg" alt="My Photo">
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="profile-pic-container circle">
+                    <img src="myphoto.jpg" alt="Abdelrhman Elyamny Moawad">
+                </div>
+                <div class="text-content">
+                    <h1 class="color_welcome">Welcome to My Portfolio</h1>
+                    <p class="subtitle">Data Scientist & ML Engineer</p>
+                </div>
             </div>
-            <div class="text-content">
-                <h1 class="color_welcome">Welcome to My Portfolio</h1>
-                <p>Data Scientist & ML Engineer</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2><br>
-            <div class="about-content">
-                <p class="intro">
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="intro">
                     I am a Computer and Informatics student at Tanta University, expected to graduate in July 2027.
                     I have a strong passion for applying Data Science and AI to solve real-world problems and make a positive impact. Currently, I am interning
                     as a Data Science Pioneer in the IBM Digital Egypt Pioneers program – Data Science track.
                     Through this program, I am actively building a solid foundation in Python, Data Analysis, and the core concepts of Machine Learning and Deep Learning.
                     I am always seeking opportunities to grow, explore new technologies, and contribute to meaningful projects.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <div class="text-content">
-                <h2>Education</h2><br>
-                <p>
-                    <strong>Bachelor of Computer Science</strong> | 2023-2027<br>
-                    Faculty of Computers and Information at Tanta University. <br>
-                    General Grade: Very Good
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2>My Skills</h2><br>
-            <div class="skills-grid">
-                <div class="skill-card"><span>Python</span><i class="fa-brands fa-python"></i></div>
-                <div class="skill-card"><span>Data Analysis</span><i class="fa-solid fa-chart-line"></i></div>
-                <div class="skill-card"><span>Statistics</span><i class="fa-solid fa-calculator"></i></div>
-                <div class="skill-card"><span>Machine Learning</span><i class="fa-solid fa-robot"></i></div>
-                <div class="skill-card"><span>Deep Learning</span><i class="fa-solid fa-brain"></i></div>
-                <div class="skill-card"><span>Data Visualization</span><i class="fa-solid fa-chart-pie"></i></div>
-                <div class="skill-card"><span>Data Preprocessing</span><i class="fa-solid fa-wrench"></i></div>
-                <div class="skill-card"><span>Seaborn</span><i class="fa-solid fa-palette"></i></div>
-                <div class="skill-card"><span>Matplotlib</span><i class="fa-solid fa-chart-bar"></i></div>
-                <div class="skill-card"><span>Pandas</span><i class="fa-solid fa-table"></i></div>
-                <div class="skill-card"><span>SQL Server</span><i class="fa-solid fa-database"></i></div>
-                <div class="skill-card"><span>Microsoft Power BI</span><i class="fa-solid fa-chart-area"></i></div>
-                <div class="skill-card"><span>Prompt Engineering</span><i class="fa-solid fa-terminal"></i></div>
-                <div class="skill-card"><span>Data Gathering</span><i class="fa-solid fa-magnifying-glass"></i></div>
-                <div class="skill-card"><span>Web Scraping</span><i class="fa-solid fa-globe"></i></div>
-                <div class="skill-card"><span>OOP</span><i class="fa-solid fa-cube"></i></div>
-                <div class="skill-card"><span>Data Structures</span><i class="fa-solid fa-layer-group"></i></div>
-                <div class="skill-card"><span>C++</span><i class="fa-solid fa-code"></i></div>
-                <div class="skill-card"><span>Git</span><i class="fa-brands fa-git-alt"></i></div>
-                <div class="skill-card"><span>GitHub</span><i class="fa-brands fa-github"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificates">
-        <div class="container">
-            <h2 class="Certificates">Certificates</h2><br> 
-            <div class="certificates-grid">
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <br>
-            <ul>
-                <li>
-                    <strong>Data Scientist Trainee - IBM Program</strong>
-                    <p> <a class="DEPI" href="https://depi.gov.eg/content/home" target="_blank">Digital Egypt Pioneers (DEPI)</a>· Initiative </p>
-                    <p> June 2025 - Present · 3 mo</p>
-                    <p> <a class="location" href="https://maps.app.goo.gl/ioNjcSXtz7j4xZfH9" target="_blank">
-                    Egypt · Hybrid</a></p>
-                    <p>
-                        <strong>AI & Data Science Trainee - Digital Egypt Initiative</strong>, June 2025 - Present<br>
-                        - Receiving intensive training in artificial intelligence, data analysis, and machine learning using Python, Pandas, and Scikit-learn.<br>
-                        - Working on hands-on projects related to data cleaning, visualization, and building predictive models.<br>
-                        - Collaborating with peers in a team-based learning environment to solve real-world problems using data.<br>
-                        - Enhancing technical and soft skills through workshops on communication, critical thinking, and innovation.
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2 class="Projects">Projects</h2><br>
-            <div class="projects-grid">
-            </div>
-        </div>
-    </section>
-
-    <section id="cv">
-        <div class="container">
-            <h2>My CV</h2><br>
-            <p>You can download my CV by clicking the button below:</p>
-            <a href="Abdelrhman_CV.pdf" download class="cv-button">Download My CV</a>
-        </div>
-    </section>
-    
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2><br>
-        </div>
-        <div class="container contact-container">
-            <div class="left-side">
-                <p>Email: <a href="mailto:abdelrhmanelyamny70@gmail.com" class="email-link">abdelrhmanelyamny70@gmail.com</a></p>
-                <div class="social-links-grid">
-                    <a href="https://www.linkedin.com/in/abdelrhman-elyamny/" target="_blank" class="social-link">LinkedIn</a>
-                    <a href="https://github.com/Abdelrhman-ely" target="_blank" class="social-link">GitHub</a>
-                    <a href="https://www.facebook.com/share/1EXWyEjAN8/?mibextid=wwXIfr" target="_blank" class="social-link">Facebook</a>
-                    <a href="https://wa.me/201020002696" target="_blank" class="social-link">WhatsApp</a>
                 </div>
             </div>
+        </section>
+
+        <section id="education" class="section">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="about-content">
+            <h3>Bachelor of Computer Science</h3>
+            <p>
+                Faculty of Computers and Information at Tanta University 
+                <span class="edu-year">| 2023 - 2027</span>
+            </p>
+            <p class="details">General Grade: Very Good</p>
         </div>
-    </section>
+    </div>
+</section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><span>Python</span><i class="fa-brands fa-python"></i></div>
+                        <div class="skill-card"><span>C++</span><i class="fa-solid fa-code"></i></div>
+                        <div class="skill-card"><span>SQL</span><i class="fa-solid fa-database"></i></div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-chart-bar"></i> Data Analysis & Visualization Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><span>Pandas</span><i class="fa-solid fa-table"></i></div>
+                        <div class="skill-card"><span>NumPy</span><i class="fa-solid fa-square-root-variable"></i></div>
+                        <div class="skill-card"><span>Statistics</span><i class="fa-solid fa-calculator"></i></div>
+                        <div class="skill-card"><span>Matplotlib</span><i class="fa-solid fa-chart-bar"></i></div>
+                        <div class="skill-card"><span>Seaborn</span><i class="fa-solid fa-palette"></i></div>
+                        <div class="skill-card"><span>Power BI</span><i class="fa-solid fa-chart-area"></i></div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-robot"></i> Machine & Deep Learning Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><span>Scikit-learn</span><i class="fa-solid fa-flask"></i></div>
+                        <div class="skill-card"><span>TensorFlow</span><i class="fa-solid fa-cubes"></i></div>
+                        <div class="skill-card"><span>PyTorch</span><i class="fa-solid fa-brain"></i></div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-database"></i> Data Management Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><span>SQL Server</span><i class="fa-solid fa-database"></i></div>
+                        <div class="skill-card"><span>MySQL</span><i class="fa-solid fa-database"></i></div>
+                        <div class="skill-card"><span>Web Scraping</span><i class="fa-solid fa-globe"></i></div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-title"><i class="fas fa-laptop-code"></i> Software Development Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><span>OOP</span><i class="fa-solid fa-cube"></i></div>
+                        <div class="skill-card"><span>Data Structures</span><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="skill-card"><span>Algorithms</span><i class="fa-solid fa-diagram-project"></i></div>
+                        <div class="skill-card"><span>Git</span><i class="fa-brands fa-git-alt"></i></div>
+                        <div class="skill-card"><span>GitHub</span><i class="fa-brands fa-github"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="about-content">
+            <h3>Data Scientist Trainee - IBM Program</h3>
+            <p class="company">
+                <a href="https://depi.gov.eg/content/home" target="_blank">Digital Egypt Pioneers (DEPI)</a> · Initiative
+            </p>
+            <p class="period">June 2025 - Present · 3 mo</p>
+            <p class="location">
+                <a href="https://maps.app.goo.gl/ioNjcSXtz7j4xZfH9" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Egypt · Hybrid
+                </a>
+            </p>
+            <ul class="experience-details">
+                <li> Receiving intensive training in artificial intelligence, data analysis, and machine learning using Python, Pandas, and Scikit-learn.</li>
+                <li> Working on hands-on projects related to data cleaning, visualization, and building predictive models.</li>
+                <li> Collaborating with peers in a team-based learning environment to solve real-world problems using data.</li>
+                <li> Enhancing technical and soft skills through workshops on communication, critical thinking, and innovation.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="cv" class="section">
+            <div class="container">
+                <h2 class="section-title">My CV</h2>
+                <p>You can download my CV by clicking the button below:</p>
+                <a href="Abdelrhman_CV.pdf" download class="cv-button">Download My CV</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-content">
+                    <p class="contact-info">Email: <a href="mailto:abdelrhmanelyamny70@gmail.com" class="email-link">abdelrhmanelyamny70@gmail.com</a></p>
+                    <div class="social-links-grid">
+                        <a href="https://www.linkedin.com/in/abdelrhman-elyamny/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/Abdelrhman-ely" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.facebook.com/share/1EXWyEjAN8/?mibextid=wwXIfr" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://wa.me/201020002696" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>© 2025 Abdelrhman Elyamny Moawad. All rights reserved.</p>
     </footer>
 
     <script src="main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".skill-card[data-icon]").forEach(card => {
-                const iconClass = card.getAttribute("data-icon");
-                const icon = document.createElement("i");
-                icon.classList.add("fab", iconClass);
-                card.appendChild(icon);
-            });
-        });
-    </script>
 </body>
 </html>

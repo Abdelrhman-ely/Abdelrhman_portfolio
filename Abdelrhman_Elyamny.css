@@ -1,20 +1,19 @@
-/*
- * This CSS file combines the styles from your previous code snippets
- * to create a single, cohesive stylesheet for your website.
- */
-
+/* --- Global Variables and Base Styles --- */
 :root {
     --primary-color: rgb(18, 93, 169);
     --secondary-color: rgb(4, 245, 229);
     --text-color: #333;
     --background-color: #f5f6fa;
     --bg-dark: rgb(8, 58, 107);
+    --card-bg: #fff;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 html {
     scroll-behavior: smooth;
 }
- 
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +27,33 @@ body {
     background-color: var(--background-color);
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
 /* --- Navigation Styles --- */
+
 nav {
     background-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -83,182 +108,135 @@ nav {
     color: white;
 }
 
-.nav-links a.active {
-    color: var(--secondary-color);
-}
-
-/* --- General Section Styles --- */
-section {
-    padding: 100px 0;
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-h2, h3, h4 {
-    color: var(--primary-color);
-}
-
-a {
-    text-decoration: none;
-    color: inherit; 
-    cursor: pointer; 
-    transition: color 0.3s ease; 
-}
-
 /* --- Home Section --- */
 #home {
-    background: linear-gradient(rgb(0, 0, 0), var(--bg-dark));
+    background: linear-gradient(to bottom, black, var(--bg-dark));
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    padding-top: 150px;
 }
 
-#home h1 {
-    font-size: 3rem;
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-pic-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: floatAnimation 2s ease-in-out infinite alternate;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px 5px #43b7dd;
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.color_welcome {
+    font-size: clamp(2.5rem, 6vw, 3rem);
     color: #0D6FE8;
     margin-bottom: 1rem;
 }
 
-#home p {
-    font-size: 1.6rem;
+.subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
     opacity: 0.9;
 }
 
-.circle {
-    width: 300px;
-    height: 300px;
-    background-color: transparent;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    animation: floatAnimation 2s ease-in-out infinite alternate;
-    transition: 0.3s ease-in-out;
-    position: relative;
-    left: 125px;
-}
-
-.circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 50%; 
-}
-
-.circle:hover {
-    cursor: pointer;
-    box-shadow: 0 0 20px 5px #43b7dd;
-}
-
 @keyframes floatAnimation {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-40px);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
 }
 
-/* --- About Section --- */
+/* --- About and Education Sections --- */
 .about-content {
-    text-align: left;
-    max-width: 1205px;
-    margin: 0 auto;
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.intro {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    box-shadow: var(--shadow-light);
     margin-bottom: 2rem;
 }
 
-.about-section {
-    margin-bottom: 2.5rem;
-}
-
-.about-section:last-child {
-    margin-bottom: 0;
-}
-
-.about-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-}
-
-.about-section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.about-section ul li {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.about-section ul li strong {
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
-.focus-title {
-    font-weight: bold;
-    margin-bottom: 1rem;
+.intro {
     font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 /* --- Skills Section --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+#skills .container {
+    padding-top: 50px;
 }
 
+.skills-category {
+    margin-bottom: 2.5rem;
+}
+
+/* عنوان القسم */
+.skills-category h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #365a71; /* أسود */
+}
+
+/* شبكة الكروت */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* الكارت */
 .skill-card {
     background-color: white;
     color: black;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: bold;
-    width: 208px; 
-    height: 75px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
+/* الأيقونة */
 .skill-card i {
-    position: absolute;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     opacity: 0;
     transition: opacity 0.3s ease;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
 }
 
+/* النص */
 .skill-card span {
     transition: opacity 0.3s ease;
 }
 
+/* hover */
 .skill-card:hover {
     transform: translateY(-5px);
-    background: linear-gradient(rgb(0, 0, 0), rgb(18, 98, 178));
+    background: linear-gradient(rgb(0, 0, 0), var(--primary-color));
     color: white;
 }
 
@@ -270,322 +248,194 @@ a {
     opacity: 0;
 }
 
-/* --- Certificates Section --- */
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 1.5rem; 
-    margin-top: 3rem;
+/* --- Experience Section --- */
+#experience .container {
+    padding-top: 50px;
 }
 
-.certificates-card {
-    background-color: white;
-    color: black;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    width: 208px; 
-    height: 75px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+.experience-item {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
 }
 
-.certificates-card:hover {
-    transform: translateY(-5px);
-    background: linear-gradient(rgb(0, 0, 0), rgb(18, 98, 178));
-    color: white;
+.experience-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 1rem;
 }
+
+.experience-item li {
+    margin-bottom: 0.5rem;
+}
+
+.DEPI:hover {
+    color: var(--secondary-color);
+}
+
+.location {
+    color: var(--text-color);
+}
+
+.location i {
+    margin-right: 5px;
+}
+
+
 
 /* --- Projects Section --- */
+#projects .container {
+    padding-top: 50px;
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 3rem;
 }
 
-.projects-card {
-    background-color: white;
-    color: black;
-    padding: 1rem;
+.project-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
     border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    width: 208px; 
-    height: 75px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projects-card:hover {
+.project-card:hover {
     transform: translateY(-5px);
-    background: linear-gradient(rgb(0, 0, 0), rgb(18, 98, 178));
-    color: white;
+    box-shadow: var(--shadow-heavy);
+}
+
+.project-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.project-card .project-links a {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.project-card .project-links a:hover {
+    color: var(--secondary-color);
 }
 
 /* --- CV Section --- */
+#cv {
+    text-align: center;
+}
+
 .cv-button {
     display: inline-block;
     padding: 12px 24px;
     font-size: 18px;
     color: #fff;
-    background-color: rgb(108, 201, 247);
+    background-color: var(--primary-color);
     text-align: center;
     text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease; 
-    cursor: pointer;
-    margin-top: 1rem; /* مسافة من الأعلى */
-    margin-bottom: 2rem; /* مسافة من الأسفل */
-}
-
-.cv-button:hover {
-    background: linear-gradient(135deg, #0077B5, #1c5e74); /* لون أزرق جذاب ومتدرج */
-    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
-}
-
-/* --- Experience Section --- */
-#experience pre h3 {
-    font-size: 17px; 
-    line-height: 1.6; 
-}
-
-.GitHub_username {
-    color: blue; 
-    cursor: pointer; 
-    text-decoration: none; 
-}
-
-.GitHub_username:hover {
-    color: #43b7dd; 
-}
-
-.DEPI:hover {
-    color: #43b7dd; 
-}
-
-.DEPI:active {
-    color: #43b7dd; 
-}
-
-.hover-Milky {
-    color: blue;
-}
- 
-.hover-Milky:hover {
-    color: #43b7dd;
-}
-
-a.location:hover {
-    color: #43b7dd; 
-}
-
-a.location:active {
-    color: #43b7dd; 
-}
-
-/* --- More/Details Section --- */
-.summary {
-    cursor: pointer; 
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s ease; 
-    list-style: none; 
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-summary::marker {
-    display: none;
-}
-
-.summary:hover {
-    color: rgb(18, 98, 178);
-}
-
-details[open] .summary {
-    color: rgb(18, 98, 178);
-}
-
-.summary::after {
-    content: " ▼"; 
-    display: inline-block;
-    transition: transform 0.3s ease;
-    animation: bounce 1.2s infinite alternate ease-in-out;
-}
-
-details[open] .summary::after {
-    transform: rotate(180deg);
-    animation: none; 
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(10px);
-    }
-}
-
-details p {
-    font-size: 17px;
-    line-height: 1.3;
-}
-
-/* --- Tooltip Styles --- */
-.tooltip-box {
-    position: absolute;
-    background: linear-gradient(rgb(0, 0, 0), var(--bg-dark));
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    z-index: 1000;
-    pointer-events: none;
-    transform: translateY(-5px);
-    opacity: 0;
-    animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-}
-
-/* --- Contact Section --- */
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem;
-    gap: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 1130px;
-}
-
-.left-side, .right-side {
-    flex: 1 1 45%;
-}
-
-.social-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-#contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#emailInput {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-}
-
-.social-link {
-    text-decoration: none;
-    color: black;
-    padding: 0.5rem 1rem;
-    border: 2px solid transparent;
     border-radius: 5px;
     transition: all 0.3s ease;
     cursor: pointer;
-    background-color: white;
-    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.cv-button:hover {
+    background: linear-gradient(135deg, #0077B5, #1c5e74);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+}
+
+/* --- Contact Section --- */
+#contact .container {
+    padding-top: 50px;
+}
+
+.contact-content {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
     text-align: center;
-    border: none;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.email-link {
+    color: var(--primary-color);
+}
+
+.email-link:hover {
+    color: var(--secondary-color);
+}
+
+.social-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.social-link i {
+    margin-right: 0.5rem;
 }
 
 .social-link:hover {
     color: white;
+    border-color: transparent;
 }
 
-/* Specific platform hovers */
 .social-link[href*="linkedin"]:hover { background-color: #0077B5; }
 .social-link[href*="github"]:hover { background-color: #24292e; }
 .social-link[href*="facebook"]:hover { background-color: #1877F2; }
-.social-link[href*="instagram"]:hover { background-image: linear-gradient(45deg, #feda75, #d62976, #833ab4); color: white; }
-.social-link[href*="snapchat"]:hover { background-color: #FFFC00; color: black; }
-
-button {
-    padding: 0.5rem;
-    background-color: #004080;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0066cc;
-}
+.social-link[href*="whatsapp"]:hover { background-color: #25D366; }
 
 /* --- Footer --- */
 footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem 0;
 }
 
-/* --- Responsive Design --- */
+/* --- Media Queries for Responsiveness --- */
 @media (max-width: 768px) {
     .nav-content {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
     .nav-links {
         margin-top: 1rem;
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
-    #home h1 {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-title {
         font-size: 2rem;
-    }
-
-    .about-content {
-        padding: 1.5rem;
-    }
-
-    .about-section h3 {
-        font-size: 1.5rem;
-    }
-
-    .intro {
-        font-size: 1.1rem;
     }
 }
