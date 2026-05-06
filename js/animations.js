@@ -47,47 +47,7 @@ const Animations = (() => {
 
   /* ── Typing effect ──────────────────────────────────────────────────────── */
   const initTyping = () => {
-    const el = document.getElementById('hero-typing');
-    if (!el) return;
-
-    const words   = portfolioData.personal.titleTypes || ['Data Scientist'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    // Insert cursor span after the typing element
-    const cursor = document.createElement('span');
-    cursor.className = 'typing-cursor';
-    el.parentNode.insertBefore(cursor, el.nextSibling);
-
-    const type = () => {
-      const currentWord = words[wordIndex];
-
-      if (isDeleting) {
-        el.textContent = currentWord.slice(0, charIndex - 1);
-        charIndex--;
-      } else {
-        el.textContent = currentWord.slice(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let delay = isDeleting ? 60 : 100;
-
-      if (!isDeleting && charIndex === currentWord.length) {
-        // Pause at end of word
-        delay = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex  = (wordIndex + 1) % words.length;
-        delay = 400;
-      }
-
-      setTimeout(type, delay);
-    };
-
-    // Small initial delay so it starts after hero animations
-    setTimeout(type, 1200);
+    // Typing animation removed to keep the title static.
   };
 
   /* ── Animated counter for stats ─────────────────────────────────────────── */

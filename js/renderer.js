@@ -51,35 +51,11 @@ const Renderer = (() => {
 
   /* ── Skills Section ─────────────────────────────────────────────────────── */
   const renderSkills = () => {
-    const tabsEl  = document.querySelector('#skills-tabs');
-    const panelsEl = document.querySelector('#skills-panels');
-    if (!tabsEl || !panelsEl) return;
+    const gridEl = document.querySelector('#skills-grid');
+    if (!gridEl) return;
 
-    const allItems = d.skills.flatMap(cat => cat.items);
-
-    const allTab = `<button class="skills-tab active" data-idx="all">All</button>`;
-    const catTabs = d.skills.map((cat, i) =>
-      `<button class="skills-tab" data-idx="${i}">${cat.category}</button>`
-    ).join('');
-    tabsEl.innerHTML = allTab + catTabs;
-
-    // All panel
-    const allPanel = `
-      <div class="skills-panel active" data-panel="all">
-        <div class="skills-chips stagger-children">
-          ${allItems.map(s => `
-            <div class="skill-chip">
-              <i class="${s.icon}"></i>
-              <span>${s.name}</span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-
-    // Category panels
-    const catPanels = d.skills.map((cat, i) => `
-      <div class="skills-panel" data-panel="${i}">
+    gridEl.innerHTML = d.skills.map(cat => `
+      <div class="skills-card reveal">
         <div class="skills-category-title">
           <i class="${cat.icon}"></i> ${cat.category}
         </div>
@@ -93,20 +69,6 @@ const Renderer = (() => {
         </div>
       </div>
     `).join('');
-
-    panelsEl.innerHTML = allPanel + catPanels;
-
-    // Tab switching logic
-    tabsEl.addEventListener('click', (e) => {
-      const btn = e.target.closest('.skills-tab');
-      if (!btn) return;
-      const idx = btn.dataset.idx;
-      tabsEl.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      panelsEl.querySelectorAll('.skills-panel').forEach(p => {
-        p.classList.toggle('active', p.dataset.panel === idx);
-      });
-    });
   };
 
   /* ── Experience Section ─────────────────────────────────────────────────── */
@@ -129,7 +91,7 @@ const Renderer = (() => {
               <span class="exp-period"><i class="fa-regular fa-calendar"></i> ${exp.period}</span>
               <span class="exp-location">
                 <i class="fa-solid fa-location-dot"></i>
-                <a href="${exp.locationUrl}" target="_blank" rel="noopener">${exp.location}</a>
+                ${exp.locationUrl && exp.locationUrl !== '#' ? `<a href="${exp.locationUrl}" target="_blank" rel="noopener">${exp.location}</a>` : `<span>${exp.location}</span>`}
               </span>
             </div>
           </div>
@@ -162,7 +124,7 @@ const Renderer = (() => {
             <i class="fa-regular fa-calendar"></i> ${edu.period}
           </span>
           <span class="edu-grade">
-            <i class="fa-solid fa-star"></i> ${edu.grade}
+            <i class="fa-solid fa-star"></i> ${edu.gpa ? `GPA: ${edu.gpa}` : edu.grade}
           </span>
         </div>
         <p class="edu-desc">${edu.description}</p>
@@ -177,11 +139,16 @@ const Renderer = (() => {
     if (!grid || !filterBar) return;
 
     // Filter buttons
-    filterBar.innerHTML = d.projectCategories.map(cat => `
-      <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-filter="${cat}">
-        ${cat}
-      </button>
-    `).join('');
+    if (d.projectCategories && Array.isArray(d.projectCategories)) {
+      filterBar.innerHTML = d.projectCategories.map(cat => `
+        <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-filter="${cat}">
+          ${cat}
+        </button>
+      `).join('');
+    } else {
+      filterBar.innerHTML = '';
+      filterBar.style.display = 'none';
+    }
 
     // Project cards
     grid.innerHTML = d.projects.map(proj => `
@@ -249,7 +216,7 @@ const Renderer = (() => {
       const contactItems = [
         { icon: 'fa-solid fa-envelope', label: d.personal.email, href: `mailto:${d.personal.email}` },
         { icon: 'fa-solid fa-phone',    label: d.personal.phone, href: `tel:${d.personal.phone}` },
-        { icon: 'fa-solid fa-location-dot', label: d.personal.location, href: '#' },
+        // { icon: 'fa-solid fa-location-dot', label: d.personal.location, href: '#' },
       ];
       itemsEl.innerHTML = contactItems.map(item => `
         <a class="contact-item" href="${item.href}">
@@ -285,9 +252,7 @@ const Renderer = (() => {
 
   /* ── Page meta ──────────────────────────────────────────────────────────── */
   const renderMeta = () => {
-    document.title = `${d.personal.name} — ${d.personal.title}`;
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.content = `Portfolio of ${d.personal.name} — ${d.personal.title}. ${d.personal.bio.slice(0, 120)}…`;
+    // Disabled dynamic meta tags to keep hardcoded HTML tags instead.
   };
 
   /* ── Init ───────────────────────────────────────────────────────────────── */
