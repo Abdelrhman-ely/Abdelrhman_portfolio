@@ -2,7 +2,8 @@
  * nav.js
  * ─────────────────────────────────────────────────────────────────────────
  * Handles:
- *  - Transparent → glassmorphism navbar on scroll
+ *  - Navbar bottom border on scroll
+ *  - Light / dark theme toggle (remembers the visitor's choice)
  *  - Mobile hamburger menu open/close
  *  - Click-outside / overlay to close menu
  *  - Active nav link highlighting based on scroll position
@@ -16,9 +17,34 @@ const Nav = (() => {
   const toggle   = document.getElementById('nav-toggle');
   const links    = document.getElementById('nav-links');
   const overlay  = document.getElementById('nav-overlay');
+  const themeBtn = document.getElementById('theme-toggle');
   const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  /* ── Scroll: glassmorphism background ──────────────────────────────────── */
+  /* ── Theme toggle ───────────────────────────────────────────────────────── */
+  const currentTheme = () => {
+    const set = document.documentElement.dataset.theme;
+    if (set === 'light' || set === 'dark') return set;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  /* Screen readers hear what the button will do, e.g. "Switch to dark theme" */
+  const updateThemeLabel = () => {
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
+    themeBtn?.setAttribute('aria-label', `Switch to ${next} theme`);
+  };
+
+  const initThemeToggle = () => {
+    updateThemeLabel();
+    themeBtn?.addEventListener('click', () => {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (e) { /* storage unavailable */ }
+      updateThemeLabel();
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeLabel);
+  };
+
+  /* ── Scroll: navbar border ──────────────────────────────────────────────── */
   const handleScroll = () => {
     if (!navbar) return;
     navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -74,7 +100,12 @@ const Nav = (() => {
         closeMenu();
         const offset = navbar?.offsetHeight || 72;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+
+        // Move keyboard focus with the scroll so Tab continues from the target
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
       });
     });
   };
@@ -94,6 +125,7 @@ const Nav = (() => {
     });
 
     initSmoothScroll();
+    initThemeToggle();
     handleScroll(); // run once on load
   };
 

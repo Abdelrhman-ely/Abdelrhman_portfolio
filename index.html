@@ -6,21 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
-  <title>Abdelrhman Elyamny Moawad — ML & AI Engineer</title>
-  <meta name="description" content="Portfolio of Abdelrhman Elyamny Moawad — ML & AI Engineer based in Egypt." />
+  <title>Abdelrhman Elyamny | Junior AI Engineer</title>
+  <meta name="description" content="Portfolio of Abdelrhman Elyamny Moawad — Junior AI Engineer in Cairo, Egypt, building RAG systems, AI agents and machine-learning models." />
   <meta name="keywords" content="Data Science, Machine Learning, AI, Python, Portfolio, Abdelrhman Elyamny" />
   <meta name="author" content="Abdelrhman Elyamny Moawad" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Abdelrhman Elyamny — ML & AI Engineer" />
-  <meta property="og:description" content="Portfolio showcasing AI, ML, and Data Science projects." />
-  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2300d4ff'/><stop offset='100%25' stop-color='%237c3aed'/></linearGradient></defs><rect x='20' y='20' width='60' height='60' rx='14' fill='url(%23g)' transform='rotate(45 50 50)'/><rect x='40' y='40' width='20' height='20' rx='4' fill='%230a0a0a' transform='rotate(45 50 50)'/></svg>" />
+  <!-- Canonical URL (GitHub Pages, repository subpath) -->
+  <link rel="canonical" href="https://abdelrhman-ely.github.io/Abdelrhman_portfolio/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Abdelrhman Elyamny" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://abdelrhman-ely.github.io/Abdelrhman_portfolio/" />
+  <meta property="og:title" content="Abdelrhman Elyamny | Junior AI Engineer" />
+  <meta property="og:description" content="RAG systems, AI agents and machine-learning models, evaluated with real test sets." />
+  <meta property="og:image" content="https://abdelrhman-ely.github.io/Abdelrhman_portfolio/assets/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Abdelrhman Elyamny, Junior AI Engineer" />
+  <meta property="profile:first_name" content="Abdelrhman" />
+  <meta property="profile:last_name" content="Elyamny" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abdelrhman Elyamny | Junior AI Engineer" />
+  <meta name="twitter:description" content="RAG systems, AI agents and machine-learning models, evaluated with real test sets." />
+  <meta name="twitter:image" content="https://abdelrhman-ely.github.io/Abdelrhman_portfolio/assets/social-preview.png" />
+  <meta name="twitter:image:alt" content="Abdelrhman Elyamny, Junior AI Engineer" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdelrhman Elyamny Moawad",
+      "url": "https://abdelrhman-ely.github.io/Abdelrhman_portfolio/",
+      "jobTitle": "Junior AI Engineer",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Tanta University" },
+      "sameAs": [
+        "https://www.linkedin.com/in/abdelrhman-elyamny/",
+        "https://github.com/Abdelrhman-ely"
+      ]
+    }
+  </script>
+
+  <!-- Favicon (SVG for modern browsers, PNG fallbacks for Safari and iOS) -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Apply the saved theme before first paint (avoids a light/dark flash) -->
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+    } catch (e) { /* storage unavailable: follow the system setting */ }
+  </script>
+
   <!-- Google Fonts (preconnect for performance) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" />
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -34,13 +87,8 @@
 
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       LOADING SCREEN
-       ═══════════════════════════════════════════════════════════════════════ -->
-  <!-- <div id="loading-screen" role="status" aria-label="Loading portfolio">
-    <div class="loader-ring"></div>
-    <!-- <span class="loader-text">LOADING PORTFOLIO</span> -->
-  </div>
+  <!-- Skip link: first focusable element, jumps keyboard users past the nav -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
@@ -56,16 +104,22 @@
 
       <!-- Desktop nav links -->
       <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#certifications" class="nav-link">Certs</a></li>
         <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
       </ul>
 
+      <!-- Light / dark theme toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
+
       <!-- Mobile hamburger -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
         <span></span>
         <span></span>
         <span></span>
@@ -79,79 +133,58 @@
   <!-- ═══════════════════════════════════════════════════════════════════════
        MAIN CONTENT
        ═══════════════════════════════════════════════════════════════════════ -->
-  <main>
+  <main id="main" tabindex="-1">
 
     <!-- ── HERO ───────────────────────────────────────────────────────────── -->
     <section id="hero" aria-label="Introduction">
-
-      <!-- Ambient background -->
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-blob hero-blob-1"></div>
-        <div class="hero-blob hero-blob-2"></div>
-        <div class="hero-blob hero-blob-3"></div>
-        <div class="hero-grid"></div>
-      </div>
 
       <div class="hero-inner">
 
         <!-- Profile photo -->
         <div class="hero-photo-wrap">
           <div class="hero-photo-ring">
-            <img id="hero-photo" src="profile-photo.jpeg" alt="Abdelrhman Elyamny Moawad" />
+            <img id="hero-photo" src="assets/profile-photo-avatar.jpg" alt="Portrait of Abdelrhman Elyamny Moawad" width="180" height="180" fetchpriority="high" decoding="async" />
           </div>
         </div>
 
         <!-- Text content -->
         <div class="hero-text">
           <div class="hero-greeting">
-            <i class="fa-solid fa-wave-square"></i>
-            Hi, I'm
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Cairo, Egypt
           </div>
 
           <h1 class="hero-name" id="hero-name">Abdelrhman Elyamny Moawad</h1>
 
           <div class="hero-title-wrap">
-            <span>ML & AI Engineer</span>
+            <span>Junior AI Engineer</span>
           </div>
 
-          <p class="hero-bio" id="hero-bio">
-            <!-- Injected by renderer.js -->
+          <p class="hero-headline">
+            I build LLM, RAG and computer-vision systems end to end, and I measure whether they work.
           </p>
+
+          <p class="hero-bio" id="hero-bio">
+            Currently a Generative &amp; Agentic AI trainee at DEPI and a Computer Science student at
+            Tanta University (class of 2027).
+          </p>
+
+          <!-- <ul class="hero-proof">
+            <li>RAG assistant: 24/25 correct answers on its test set</li>
+            <li>Multi-agent travel planner: live, built in a team of 5</li>
+          </ul> -->
 
           <!-- CTA Buttons -->
           <div class="hero-actions">
             <a id="hero-cv-btn" href="Abdelrhman_Elyamny_CV.pdf" download class="btn btn-primary"
               aria-label="Download CV">
-              <i class="fa-solid fa-download"></i> Download CV
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
             </a>
             <a href="#contact" class="btn btn-outline">
-              <i class="fa-solid fa-paper-plane"></i> Contact Me
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Contact Me
             </a>
           </div>
 
-        </div>
-      </div>
-
-      <!-- Scroll indicator
-      <div class="scroll-indicator" aria-hidden="true">
-        <div class="scroll-mouse"></div>
-        <span>Scroll</span>
-      </div> -->
-    </section>
-
-
-
-    <!-- ── EXPERIENCE ──────────────────────────────────────────────────────── -->
-    <section id="experience" class="section" aria-label="Work experience">
-      <div class="container">
-        <div class="section-header reveal">
-          <!-- <span class="section-label">My journey</span> -->
-          <h2 class="section-title">Work <span>Experience</span></h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="timeline" id="experience-timeline">
-          <!-- Injected by renderer.js -->
         </div>
       </div>
     </section>
@@ -160,36 +193,384 @@
     <section id="projects" class="section" aria-label="Projects">
       <div class="container">
         <div class="section-header reveal">
-          <!-- <span class="section-label">What I've built</span> -->
           <h2 class="section-title">Featured <span>Projects</span></h2>
           <div class="section-line"></div>
         </div>
 
-        <!-- Filter bar + search -->
-        <div class="projects-controls reveal">
-          <div class="filter-buttons" id="filter-buttons" role="group" aria-label="Filter projects">
-            <!-- Injected by renderer.js -->
-          </div>
-        </div>
-
-        <!-- Projects grid (populated by renderer.js) -->
         <div class="projects-grid" id="projects-grid">
-          <!-- Injected by renderer.js -->
+
+          <!-- Case study: Tanta FCI RAG Assistant -->
+          <article class="project-card featured reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></div>
+              <span class="project-featured-badge">Solo project</span>
+            </div>
+            <h3 class="project-title">Tanta FCI Academic Assistant (RAG)</h3>
+            <p class="project-desc">
+              Students had no quick way to search the faculty's 74-page scanned bylaws, and answers about
+              prerequisites and grades have to be exact. This assistant answers in Arabic and English using
+              only the bylaws, and cites the article or course behind every answer.
+            </p>
+            <dl class="case-study">
+              <dt>My contribution</dt>
+              <dd>Everything: data preparation, retrieval pipeline, API, UI, tests and evaluation.</dd>
+              <dt>Technical approach</dt>
+              <dd>
+                OCR'd the PDF to Markdown, repaired misread course codes and rewrote the grade tables, then
+                split it into 289 chunks (one per article, course and course description). Retrieval pins the
+                exact line of every course named in the question, then BGE-M3 dense search (20 candidates) and
+                a BGE cross-encoder reranker keep the top 5. A rerank-score threshold makes it refuse instead of
+                guessing, and grade questions are answered from the table in Python. A local qwen2.5:7b model
+                (Ollama, temperature 0) writes the cited answer, served by a FastAPI backend with 12 pytest test
+                functions, a Streamlit chat UI and a Dockerfile.
+              </dd>
+              <dt>Results</dt>
+              <dd>
+                On 28 hand-written test questions: 24/25 answerable questions correct, the relevant source
+                retrieved and cited for 25/25, and 3/3 out-of-scope questions refused.
+              </dd>
+              <dt>Limitations</dt>
+              <dd>
+                The test set is small and I wrote it myself, and some fixes were made after seeing failures on
+                those questions, so the score is optimistic. It still fails when a question needs several
+                prerequisites at once. It runs locally only; there is no hosted demo.
+              </dd>
+            </dl>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">BGE-M3</span>
+              <span class="project-tag">ChromaDB</span>
+              <span class="project-tag">Ollama</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">pytest</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Abdelrhman-ely/tanta-fci-rag-assistant" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
+          <!-- Case study: Ayn travel planner -->
+          <article class="project-card featured reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></div>
+              <span class="project-featured-badge">Team of 5</span>
+            </div>
+            <h3 class="project-title">Ayn — Personal Travel Planner (AI Agents)</h3>
+            <p class="project-desc">
+              Plans personalised day-by-day trips in Egypt, in Arabic and English, and keeps working when LLM
+              quotas run out.
+            </p>
+            <dl class="case-study">
+              <dt>My contribution</dt>
+              <dd>
+                I led the backend: the database schema (SQLAlchemy, 7 tables), sign-up and login with bcrypt and
+                JWT, the setup documentation and 85 automated pytest tests. I also fixed the agent side: the Groq
+                fallback was cutting every plan short, so I switched models and sized the output to the trip
+                length; I added real restaurant names from one cached Tavily search per trip; and I built Arabic
+                translation that never translates restaurant, hotel or airline names.
+              </dd>
+              <dt>Built by teammates</dt>
+              <dd>The CrewAI multi-agent design and the React frontend.</dd>
+              <dt>Technical approach</dt>
+              <dd>
+                CrewAI agents on Gemini, falling back to Groq and then to templates, behind a FastAPI and SQLite
+                backend.
+              </dd>
+              <dt>Results</dt>
+              <dd>
+                Deployed as a live web app. In a manual test of a 4-day Dahab trip, 6/6 meals named real
+                restaurants (a single check, not a benchmark).
+              </dd>
+              <dt>Limitations</dt>
+              <dd>
+                Depends on free-tier LLM and search quotas, and plan quality was checked manually rather than
+                against a test set.
+              </dd>
+            </dl>
+            <div class="project-tags">
+              <span class="project-tag">CrewAI</span>
+              <span class="project-tag">Gemini</span>
+              <span class="project-tag">Groq</span>
+              <span class="project-tag">Tavily</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">SQLAlchemy</span>
+              <span class="project-tag">pytest</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://ayn-your-personal-travel-planner-ag.vercel.app" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live app
+              </a>
+              <a class="project-link" href="https://github.com/DEPI-AIS7-S1-GROUP1/Ayn_your_personal_travel_planner_agent" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
+          <!-- Case study: Trip Price Prediction -->
+          <article class="project-card featured reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-car" aria-hidden="true"></i></div>
+              <span class="project-featured-badge">Solo project</span>
+            </div>
+            <h3 class="project-title">Trip Price Prediction</h3>
+            <p class="project-desc">Predicts ride prices from trip, vehicle and weather features.</p>
+            <dl class="case-study">
+              <dt>My contribution</dt>
+              <dd>Everything: cleaning, modelling, evaluation and deployment.</dd>
+              <dt>Technical approach</dt>
+              <dd>
+                About 100K Uber/Lyft ride records and a scikit-learn preprocessing pipeline. Compared linear
+                regression, random forest, gradient boosting, XGBoost and a neural network, and used KMeans and
+                DBSCAN to explore ride patterns and pricing anomalies. Served with FastAPI and Streamlit on
+                Hugging Face Spaces.
+              </dd>
+              <dt>Results</dt>
+              <dd>
+                XGBoost: MAE ≈ 1.36 with route-grouped 5-fold cross-validation (no route appears in both training
+                and test data). On a random 80/20 holdout: MAE 1.20 and RMSE 1.84, against a linear-regression
+                baseline of MAE 2.23.
+              </dd>
+              <dt>Limitations</dt>
+              <dd>
+                The random holdout shares routes with the training data and the hyperparameters were tuned on the
+                full dataset, so 1.36 is the more realistic number. The demo sleeps when idle and takes a moment
+                to wake up.
+              </dd>
+            </dl>
+            <div class="project-tags">
+              <span class="project-tag">XGBoost</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">KMeans</span>
+              <span class="project-tag">DBSCAN</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://huggingface.co/spaces/abdelrhman111/Trip_PricePrediction_Streamlit" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo
+              </a>
+              <a class="project-link" href="https://github.com/Abdelrhman-ely/Trip-Price-Prediction" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
+          <!-- Compact: Garbage classification -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-recycle" aria-hidden="true"></i></div>
+            </div>
+            <h3 class="project-title">Garbage Classification with ResNet50</h3>
+            <p class="project-desc">
+              Transfer learning with a pretrained ResNet50 in PyTorch to sort waste images into 10 classes.
+              95.8% accuracy on a held-out test set of 1,839 images (single training run).
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">ResNet50</span>
+              <span class="project-tag">Transfer Learning</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Abdelrhman-ely/Garbage-Classification-Using-ResNet" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
+          <!-- Compact: Vegetable CNN -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-carrot" aria-hidden="true"></i></div>
+            </div>
+            <h3 class="project-title">Vegetable CNN and Training Profiling</h3>
+            <p class="project-desc">
+              A CNN built from scratch in PyTorch for 15 vegetable classes: 97.7% test accuracy on 3,000 images.
+              Profiling showed data loading was the bottleneck; more DataLoader workers cut that time by 60%
+              (61.8 s to 24.8 s).
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">PyTorch Profiler</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Abdelrhman-ely/vegetable-cnn-profiling" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
+          <!-- Compact: Movie recommender -->
+          <article class="project-card reveal">
+            <div class="project-card-top">
+              <div class="project-icon"><i class="fa-solid fa-film" aria-hidden="true"></i></div>
+            </div>
+            <h3 class="project-title">Movie Recommendation System</h3>
+            <p class="project-desc">
+              A two-stage recommender on MovieLens 1M: a Two-Tower network retrieves candidates and a DNN ranks
+              them. Ranking RMSE 0.96 and MAE 0.76 on a time-ordered 80/20 split.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">Two-Tower NN</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Abdelrhman-ely/Movie-Recommendation-Systems" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ── EDUCATION ───────────────────────────────────────────────────────── -->
-    <section id="education" class="section" aria-label="Education">
+    <!-- ── EXPERIENCE ──────────────────────────────────────────────────────── -->
+    <section id="experience" class="section" aria-label="Experience and training">
       <div class="container">
         <div class="section-header reveal">
-          <!-- <span class="section-label">Academic background</span> -->
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title">Experience &amp; <span>Training</span></h2>
           <div class="section-line"></div>
         </div>
 
-        <div class="edu-grid stagger-children" id="education-grid">
-          <!-- Injected by renderer.js -->
+        <div class="timeline" id="experience-timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">Generative &amp; Agentic AI Trainee</h3>
+                  <div class="exp-company">
+                    <a href="https://depi.gov.eg/content/home" target="_blank" rel="noopener">Digital Egypt Pioneers Initiative (DEPI)</a>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jul 2026 – Present</span>
+                  <span class="exp-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Tanta · Hybrid</span></span>
+                </div>
+              </div>
+              <div class="exp-bullets">
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Training in generative and agentic AI, and building team projects with LLMs and AI agents, including the Ayn travel planner.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">AI Trainee</h3>
+                  <div class="exp-company">
+                    <a href="https://iti.gov.eg/" target="_blank" rel="noopener">Information Technology Institute (ITI)</a>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Sep 2026</span>
+                  <span class="exp-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Remote</span></span>
+                </div>
+              </div>
+              <div class="exp-bullets">
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Completed the 120-hour Applied AI Development (Level 2) program: Python, computer vision and YOLO, NLP, LLMs and RAG, with a final project.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">Computer Vision Trainee</h3>
+                  <div class="exp-company">
+                    <a href="https://nti.sci.eg/" target="_blank" rel="noopener">National Telecommunication Institute (NTI)</a>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Aug 2026 – Sep 2026</span>
+                  <span class="exp-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Remote</span></span>
+                </div>
+              </div>
+              <div class="exp-bullets">
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Completed a 120-hour program (90 technical hours and 30 freelancing hours) with a 95% final score.</span>
+                </div>
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Graduation project: Egyptian license plate recognition, using YOLO for detection and Arabic OCR.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">AI for Business Trainee</h3>
+                  <div class="exp-company">
+                    <a href="https://nti.sci.eg/" target="_blank" rel="noopener">National Telecommunication Institute (NTI)</a>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Mar 2026 – May 2026</span>
+                  <span class="exp-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Tanta · On-site</span></span>
+                </div>
+              </div>
+              <div class="exp-bullets">
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Completed a 120-hour program. Applied supervised and unsupervised ML to business datasets (classification, regression, clustering) and evaluated models with performance metrics.</span>
+                </div>
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Implemented ANN, CNN and RNN models on business use cases with TensorFlow/Keras.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-title">Data Science Trainee</h3>
+                  <div class="exp-company">
+                    <a href="https://depi.gov.eg/content/home" target="_blank" rel="noopener">Digital Egypt Pioneers Initiative (DEPI)</a>
+                  </div>
+                </div>
+                <div class="exp-meta">
+                  <span class="exp-period"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Jun 2025 – Dec 2025</span>
+                  <span class="exp-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Tanta · Hybrid</span></span>
+                </div>
+              </div>
+              <div class="exp-bullets">
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Built end-to-end ML pipelines (data cleaning, EDA, feature engineering, predictive modelling) with Python, Pandas and Scikit-learn, evaluated with cross-validation.</span>
+                </div>
+                <div class="exp-bullet">
+                  <i class="fa-solid fa-circle" aria-hidden="true"></i>
+                  <span>Worked in a team to analyse and solve business data problems.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -198,14 +579,106 @@
     <section id="skills" class="section" aria-label="Skills">
       <div class="container">
         <div class="section-header reveal">
-          <!-- <span class="section-label">What I work with</span> -->
           <h2 class="section-title">Technical <span>Skills</span></h2>
           <div class="section-line"></div>
         </div>
 
-        <!-- Skills grid (populated by renderer.js) -->
         <div class="skills-grid" id="skills-grid">
-          <!-- Injected by renderer.js -->
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-comments" aria-hidden="true"></i> LLMs &amp; Generative AI</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>RAG</span></div>
+              <div class="skill-chip"><span>Prompt Engineering</span></div>
+              <div class="skill-chip"><span>Embeddings &amp; Reranking (sentence-transformers)</span></div>
+              <div class="skill-chip"><span>ChromaDB</span></div>
+              <div class="skill-chip"><span>Ollama</span></div>
+              <div class="skill-chip"><span>Groq API</span></div>
+            </div>
+          </div>
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Deep Learning</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>ANN, CNN, RNN</span></div>
+              <div class="skill-chip"><span>Transfer Learning</span></div>
+              <div class="skill-chip"><span>PyTorch</span></div>
+              <div class="skill-chip"><span>TensorFlow/Keras</span></div>
+              <div class="skill-chip"><span>YOLOv8</span></div>
+            </div>
+          </div>
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-brain" aria-hidden="true"></i> Machine Learning</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>Supervised &amp; Unsupervised Learning</span></div>
+              <div class="skill-chip"><span>KMeans, DBSCAN</span></div>
+              <div class="skill-chip"><span>Feature Engineering</span></div>
+              <div class="skill-chip"><span>Model Evaluation</span></div>
+              <div class="skill-chip"><span>Hyperparameter Tuning</span></div>
+              <div class="skill-chip"><span>Scikit-learn</span></div>
+              <div class="skill-chip"><span>XGBoost</span></div>
+            </div>
+          </div>
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-server" aria-hidden="true"></i> Model Integration &amp; Deployment</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>FastAPI</span></div>
+              <div class="skill-chip"><span>REST APIs</span></div>
+              <div class="skill-chip"><span>Streamlit</span></div>
+              <div class="skill-chip"><span>SQLAlchemy</span></div>
+              <div class="skill-chip"><span>pytest</span></div>
+            </div>
+          </div>
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-table" aria-hidden="true"></i> Data Processing &amp; Analysis</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>Data Cleaning</span></div>
+              <div class="skill-chip"><span>Exploratory Data Analysis</span></div>
+              <div class="skill-chip"><span>Pandas</span></div>
+              <div class="skill-chip"><span>NumPy</span></div>
+              <div class="skill-chip"><span>Matplotlib</span></div>
+            </div>
+          </div>
+
+          <div class="skills-card reveal">
+            <h3 class="skills-category-title"><i class="fa-solid fa-code" aria-hidden="true"></i> Programming, Databases &amp; Tools</h3>
+            <div class="skills-chips">
+              <div class="skill-chip"><span>Python</span></div>
+              <div class="skill-chip"><span>SQL</span></div>
+              <div class="skill-chip"><span>C++ (Basic)</span></div>
+              <div class="skill-chip"><span>SQLite</span></div>
+              <div class="skill-chip"><span>MongoDB</span></div>
+              <div class="skill-chip"><span>Git</span></div>
+              <div class="skill-chip"><span>GitHub</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ───────────────────────────────────────────────────────── -->
+    <section id="education" class="section" aria-label="Education">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Education</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="edu-grid stagger-children" id="education-grid">
+          <div class="edu-card reveal">
+            <div class="edu-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <h3 class="edu-degree">Bachelor of Computer Science</h3>
+            <div class="edu-institution">Faculty of Computers and Information — Tanta University</div>
+            <div class="edu-meta">
+              <span class="edu-period">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i> 2023 – 2027 (expected)
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -214,13 +687,120 @@
     <section id="certifications" class="section" aria-label="Certifications">
       <div class="container">
         <div class="section-header reveal">
-          <!-- <span class="section-label">Verified credentials</span> -->
           <h2 class="section-title">Certifications</h2>
           <div class="section-line"></div>
         </div>
 
         <div class="certs-grid stagger-children" id="certs-grid">
-          <!-- Injected by renderer.js -->
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name">Deep Learning Specialization</div>
+              <div class="cert-issuer">DeepLearning.AI (Coursera) — 3 of 5 courses completed, course 4 in progress</div>
+            </div>
+            <div class="cert-date">In progress</div>
+          </div>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/verify/ONAUNLH43A7G" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Structuring Machine Learning Projects">Structuring Machine Learning Projects</div>
+              <div class="cert-issuer">DeepLearning.AI — Deep Learning Specialization, course 3</div>
+            </div>
+            <div class="cert-date">Oct 2026</div>
+          </a>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/verify/R5R15AYFY2WR" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</div>
+              <div class="cert-issuer">DeepLearning.AI — Deep Learning Specialization, course 2</div>
+            </div>
+            <div class="cert-date">Jun 2026</div>
+          </a>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/verify/ETOQ3BNCLGN3" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Neural Networks and Deep Learning">Neural Networks and Deep Learning</div>
+              <div class="cert-issuer">DeepLearning.AI — Deep Learning Specialization, course 1</div>
+            </div>
+            <div class="cert-date">Apr 2026</div>
+          </a>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name">PyTorch for Deep Learning Professional Certificate</div>
+              <div class="cert-issuer">DeepLearning.AI (Coursera) — final course in progress</div>
+            </div>
+            <div class="cert-date">In progress</div>
+          </div>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/verify/2AP9KNOI6V1D" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="PyTorch: Techniques and Ecosystem Tools">PyTorch: Techniques and Ecosystem Tools</div>
+              <div class="cert-issuer">DeepLearning.AI</div>
+            </div>
+            <div class="cert-date">Aug 2026</div>
+          </a>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/verify/HB91B8117QX0" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="PyTorch: Fundamentals">PyTorch: Fundamentals</div>
+              <div class="cert-issuer">DeepLearning.AI</div>
+            </div>
+            <div class="cert-date">Jul 2026</div>
+          </a>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name">Retrieval Augmented Generation (RAG)</div>
+              <div class="cert-issuer">DeepLearning.AI (Coursera)</div>
+            </div>
+            <div class="cert-date">In progress</div>
+          </div>
+
+          <a class="cert-card" href="https://www.coursera.org/account/accomplishments/specialization/0HIEVF3R50JP" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Machine Learning Specialization">Machine Learning Specialization</div>
+              <div class="cert-issuer">Stanford Online &amp; DeepLearning.AI (Coursera)</div>
+            </div>
+            <div class="cert-date">Feb 2026</div>
+          </a>
+
+          <a class="cert-card" href="assets/certificates/ITI-Summer-Intern.jpeg" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Applied AI Development, Level 2 (120 hours)">Applied AI Development, Level 2 (120 hours)</div>
+              <div class="cert-issuer">Information Technology Institute (ITI)</div>
+            </div>
+            <div class="cert-date">Sep 2026</div>
+          </a>
+
+          <a class="cert-card" href="assets/certificates/NTI_SummerIntern-optimized.jpg" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Computer Vision Summer Training (120 hours, 95%)">Computer Vision Summer Training (120 hours, 95%)</div>
+              <div class="cert-issuer">National Telecommunication Institute (NTI) &amp; ITIDA</div>
+            </div>
+            <div class="cert-date">Sep 2026</div>
+          </a>
+
+          <a class="cert-card" href="assets/certificates/DEPI-optimized.jpg" target="_blank" rel="noopener">
+            <div class="cert-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+            <div class="cert-info">
+              <div class="cert-name" title="Data Scientist — Digital Egypt Pioneers Program">Data Scientist — Digital Egypt Pioneers Program</div>
+              <div class="cert-issuer">Digital Egypt Pioneers Initiative (DEPI)</div>
+            </div>
+            <div class="cert-date">Dec 2025</div>
+          </a>
+
         </div>
       </div>
     </section>
@@ -229,7 +809,6 @@
     <section id="contact" class="section" aria-label="Contact">
       <div class="container">
         <div class="section-header reveal">
-          <!-- <span class="section-label">Let's talk</span> -->
           <h2 class="section-title">Let's Connect</h2>
           <div class="section-line"></div>
         </div>
@@ -240,29 +819,30 @@
           <div class="contact-info reveal reveal-left">
             <h3>Let's build something together</h3>
             <p>
-              ML & AI Engineer focused on building production-ready systems.
+              Junior AI Engineer open to AI Engineer and Data Scientist roles.
             </p>
 
-            <!-- Contact detail items (populated by renderer.js) -->
             <div class="contact-items" id="contact-items">
-              <!-- Injected by renderer.js -->
+              <a class="contact-item" href="mailto:abdelrhmanelyamny70@gmail.com">
+                <div class="contact-item-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <span>abdelrhmanelyamny70@gmail.com</span>
+              </a>
             </div>
 
-            <!-- WhatsApp quick redirect
-            <button id="whatsapp-btn" class="btn btn-outline" style="margin-bottom: 1rem;">
-              <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
-            </button> -->
-
-            <!-- Social links (populated by renderer.js) -->
             <div class="social-links" id="social-links">
-              <!-- Injected by renderer.js -->
+              <a class="social-btn" href="https://www.linkedin.com/in/abdelrhman-elyamny/" target="_blank" rel="noopener" data-social="linkedin">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+              </a>
+              <a class="social-btn" href="https://github.com/Abdelrhman-ely" target="_blank" rel="noopener" data-social="github">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+              </a>
             </div>
           </div>
 
           <!-- Right: contact form -->
           <div class="contact-form-wrap reveal reveal-right">
             <div class="form-title">
-              <i class="fa-solid fa-envelope-open-text" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i>
+              <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
               Send a Message
             </div>
 
@@ -302,7 +882,7 @@
               <!-- Submit -->
               <button type="submit" id="submit-btn" class="btn btn-submit">
                 <span class="btn-text">
-                  <i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>&nbsp; Send Message
                 </span>
                 <span class="spinner"></span>
               </button>
@@ -321,38 +901,30 @@
   <footer role="contentinfo">
     <div class="footer-inner">
       <p class="footer-copy" id="footer-copy">
-        <!-- Injected by renderer.js -->
+        © 2026 <span>Abdelrhman Elyamny</span>. All rights reserved.
       </p>
       <a href="#hero" class="back-to-top" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i> Back to top
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top
       </a>
     </div>
   </footer>
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       SCRIPTS — load order matters:
-       1. data.js      → defines portfolioData
-       2. renderer.js  → injects data into DOM
-       3. nav.js       → navbar behaviour (needs DOM)
-       4. projects.js  → filter/search (needs rendered cards)
-       5. contact.js   → form (needs rendered form)
-       6. animations.js→ observers + typing (runs last)
+       SCRIPTS — content is static HTML; these only add behaviour:
+       1. nav.js       → navbar behaviour
+       2. contact.js   → contact form
+       3. animations.js→ scroll reveal
        ═══════════════════════════════════════════════════════════════════════ -->
-  <script src="js/data.js"></script>
-  <script src="js/renderer.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/projects.js"></script>
   <script src="js/contact.js"></script>
   <script src="js/animations.js"></script>
 
   <!-- Bootstrap all modules -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      Renderer.init();    // 1. Inject all data into DOM
-      Nav.init();         // 2. Activate navbar
-      Projects.init();    // 3. Wire up filter + search
-      Contact.init();     // 4. Wire up contact form
-      Animations.init();  // 5. Start animations
+      Nav.init();         // 1. Activate navbar
+      Contact.init();     // 2. Wire up contact form
+      Animations.init();  // 3. Start scroll reveal
     });
   </script>
 

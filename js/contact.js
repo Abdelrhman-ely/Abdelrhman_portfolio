@@ -140,24 +140,12 @@ const Contact = (() => {
     }
   };
 
-  /* ── WhatsApp redirect ──────────────────────────────────────────────────── */
-  const initWhatsApp = () => {
-    const waBtn = document.getElementById('whatsapp-btn');
-    if (!waBtn) return;
-    waBtn.addEventListener('click', () => {
-      const phone   = portfolioData.personal.phone.replace(/\D/g, '');
-      const message = encodeURIComponent(`Hi ${portfolioData.personal.nameShort}! I saw your portfolio and would like to connect.`);
-      window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-    });
-  };
-
   /* ── Init ───────────────────────────────────────────────────────────────── */
   const init = () => {
     const form = document.getElementById('contact-form');
     if (!form) return;
     form.addEventListener('submit', handleSubmit);
     clearErrorsOnInput();
-    initWhatsApp();
   };
 
   return { init };
